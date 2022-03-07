@@ -7,7 +7,7 @@
 #### 上桥检测
 1.当端点摄像机捕获到车辆时,检查Prediction队列中是否有该摄像机的反方向预测信号，如果有则取出预测队列中反方向信号的生成时间进行对比如果远小于车辆通过摄像头区间的最小时间则判定为入队。\
 2.标记完方向后标记车辆方向将其入队Vehicle队列的camera_one bucket中(端点摄像机)，并在Prediction队列中加入车辆要通过的下一个摄像机ID(Camera_two)作为预测。\
-3.启动一个Watcher监视camera_two。在经过车辆最大通过时间后去查询camera_two是否捕获到车辆，如果捕获到车辆则对比预测队列中的方向是否相同，如果相同则删除camera_one bucket中的车辆信息，watcher结束工作。\
+3.启动一个Watcher监视camera_two。在经过车辆最大通过时间后去查询camera_two是否捕获到车辆，如果捕获到车辆则对比预测队列中的方向是否相同，如果相同则删除camera_one bucket中的车辆信息，Watcher结束工作。\
 \
 ![image](image/danger-goods-vehicle.png)
 
@@ -16,4 +16,4 @@
 2.在Vehicle中添加信号供Watcher检查，同时删除Prediction中的预测信号。\
 3.Watcher检测到Vehicle中有下桥信号时，删除Vehicle中下桥信号结束工作。\
 \
-![image](image/QuitBridge.png)
+![image](image/)
