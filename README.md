@@ -16,4 +16,4 @@
 2.在Vehicle中添加信号供Watcher检查，同时删除Prediction中的预测信号。\
 3.Watcher检测到Vehicle中有下桥信号时，删除Vehicle中下桥信号结束工作。\
 \
-![image](image/)
+![image](image/QuitBridge.png)
