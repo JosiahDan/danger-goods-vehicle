@@ -10,3 +10,10 @@
 3.启动一个Watcher监视Camera_two。在经过车辆最大通过时间后去查询camera_two是否捕获到车辆，如果捕获到车辆则对比预测队列中的方向是否相同，如果相同则删除camera_one bucket中的车辆信息，watcher结束工作。\
 \
 ![image](image/danger-goods-vehicle.png)
+
+#### 下桥检测
+1.车辆被camera_five捕获后，查询Prediction队列中是否有对应方向的预测下桥信号如果有则判定为下桥。\
+2.在Vehicle中添加信号供Watcher检查，同时删除Prediction中的预测信号。\
+3.Watcher检测到Vehicle中有下桥信号时，删除Vehicle中下桥信号结束工作。\
+\
+![image](image/QuitBridge.png)
